@@ -20,7 +20,7 @@ $config = [
             'class' => 'yii\caching\FileCache',
         ],
         'user' => [
-            'identityClass' => 'app\models\User',
+            'identityClass' => 'app\models\ApiUser',
             'enableAutoLogin' => true,
         ],
         'errorHandler' => [
@@ -53,6 +53,10 @@ $config = [
         */
     ],
     'params' => $params,
+    'controllerMap' => [
+        'auth'  => 'app\controllers\Api\AuthController',
+        'posts' => 'app\controllers\Api\PostsController',
+    ],
 ];
 
 if (YII_ENV_DEV) {
